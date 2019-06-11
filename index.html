@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Visualização de Dados VD 2019/01</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="dc.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 style="text-align: left">DATA VISUALIZATION</h1>
+			</div>
+    		<div class="col">
+    			<div>
+	      			<div class="dc-data-count">
+	      				<span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset all</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="sex" style="text-align: center">
+					<strong>Sex</strong>
+				    <div class="reset" style="visibility: hidden;">Selected: <span class="filter"></span>
+				      <a href="javascript:sexChart.filterAll();dc.redrawAll();">reset</a>
+				    </div>
+				</div>
+			</div>
+    		<div class="col">
+    			<div id="age" style="text-align: center">
+				    <strong>Students</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:ageChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+    		</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col">
+				<div id="agealco" style="text-align: center">
+					<strong>Age of first alcohol drink</strong>
+			    	<span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+			    	<a class="reset" href="javascript:agealcoChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col"></div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="lifesat" style="text-align: center">
+				    <strong>Life Satisfaction</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:lifesatChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col">
+				<div id="likeschool" style="text-align: center">
+					<strong>Liking School</strong>
+			    	<span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+			    	<a class="reset" href="javascript:likeschoolChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="bulliedothers" style="text-align: center">
+				    <strong>Bullied Others</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:bulliedothersChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col">
+				<div id="beenbullied" style="text-align: center">
+					<strong>Been Bullied</strong>
+			    	<span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+			    	<a class="reset" href="javascript:beenbulliedChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="alcltm" style="text-align: center">
+				    <strong>Alcohol use in lifetime</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:alcltmChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col">
+				<div id="alc30d_2" style="text-align: center">
+					<strong>Alcohol use last 30 days</strong>
+			    	<span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+			    	<a class="reset" href="javascript:alc30d_2Chart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="alcopops" style="text-align: center">
+				    <strong>Alcopops</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:alcopopsChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col">
+				<div id="agedrunk" style="text-align: center">
+				    <strong>Age of first drunk</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:agedrunkChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="drunk" style="text-align: center">
+					<strong>Been Drunk</strong>
+			    	<span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+			    	<a class="reset" href="javascript:drunkChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+			<div class="col">
+				
+				<div id="drunk30d" style="text-align: center">
+				    <strong>Been drunk last 30 days</strong>
+				    <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+				    <a class="reset" href="javascript:drunk30dChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+				</div>
+			</div>
+    	</div>
+  	</div>
+
+	<script src="crossfilter.js"></script>
+	<script src="d3.js"></script>
+	<script src="dc.js"></script>
+
+	<script>
+		var ageChart = dc.barChart("#age"),
+			sexChart = dc.pieChart("#sex"),
+			lifesatChart = dc.rowChart("#lifesat"),
+			alcltmChart = dc.rowChart("#alcltm"),
+			alc30d_2Chart = dc.rowChart("#alc30d_2"),
+			alcopopsChart = dc.rowChart("#alcopops"),
+			drunkChart = dc.rowChart("#drunk"),
+			drunk30dChart = dc.rowChart("#drunk30d"),
+			agealcoChart = dc.rowChart("#agealco"),
+			agedrunkChart = dc.rowChart("#agedrunk"),
+			likeschoolChart = dc.rowChart("#likeschool"),
+			bulliedothersChart = dc.rowChart("#bulliedothers"),
+			beenbulliedChart = dc.rowChart("#beenbullied"),
+			visCount = dc.dataCount(".dc-data-count");
+
+    	var url = "dataframeLabel.csv";
+
+		d3.csv(url, function (err, data) {
+			if (err) throw err;
+
+			var ndx = crossfilter(data);
+			var all = ndx.groupAll();
+
+			var ageDim = ndx.dimension(function (d) { return d["AGE"]; });
+			var sexDim = ndx.dimension(function (d) { return d["sex"]; });
+			var bulliedotherDim = ndx.dimension(function (d) { return d["bulliedothers"]; });
+			var beenbulliedDim = ndx.dimension(function (d) { return d["beenbullied"]; });
+			var lifesatDim = ndx.dimension(function (d) { return d["lifesat"]; });
+			var alcltmDim = ndx.dimension(function (d) { return d["alcltm"]; });
+			var alc30d_2Dim = ndx.dimension(function (d) { return d["alc30d_2"]; });
+			var alcopopsDim = ndx.dimension(function (d) { return d["alcopops"]; });
+			var drunkDim = ndx.dimension(function (d) { return d["drunk"]; });
+			var drunk30dDim = ndx.dimension(function (d) { return d["drunk30d"]; });
+			var agealcoDim = ndx.dimension(function (d) { return d["agealco"]; });
+			var agedrunkDim = ndx.dimension(function (d) { return d["agedrunk"]; });
+			var likeschoolDim = ndx.dimension(function (d) { return d["likeschool"]; });
+
+			var ageGroup = ageDim.group();
+			var sexGroup = sexDim.group();
+			var bulliedotherGroup = bulliedotherDim.group();
+			var beenbulliedGroup = beenbulliedDim.group();
+			var lifesatGroup = lifesatDim.group();
+			var alcltmGroup = alcltmDim.group();
+			var alc30d_2Group = alc30d_2Dim.group();
+			var alcopopsGroup = alcopopsDim.group();
+			var drunkGroup = drunkDim.group();
+			var drunk30dGroup = drunk30dDim.group();
+			var agealcoGroup = agealcoDim.group();
+			var agedrunkGroup = agedrunkDim.group();
+			var likeschoolGroup = likeschoolDim.group();
+
+			let genderColors = [{'value': 'Girl', 'color': '#efc3e2'}, {'value': 'Boy', 'color': '#76bbe1'}];
+
+			sexChart
+			    .width(300) .height(250)
+			    .dimension(sexDim)
+			    .group(sexGroup)
+			    .innerRadius(50)
+			    .controlsUseVisibility(true);
+
+		    sexChart.colorAccessor(function(data) { return data.key; })
+	        	.colors(function(data) {
+	            return colorSchema(genderColors, data);
+        	})
+
+			bulliedothersChart
+				.width(540) .height(300)
+				.dimension(bulliedotherDim)
+				.group(bulliedotherGroup)
+				.elasticX(true)
+			;
+
+			beenbulliedChart
+				.width(540) .height(300)
+				.dimension(beenbulliedDim)
+				.group(beenbulliedGroup)
+				.elasticX(true)
+			;
+
+			ageChart
+				.width(450)
+		        .height(400)
+		        .x(d3.scale.ordinal().domain(["Didn't Answer", '10', '11', '12', '13', '14', '15', '16']))
+		        .xUnits(dc.units.ordinal)
+		        .brushOn(false)
+		        .xAxisLabel('Age')
+		        .yAxisLabel('', 20)
+		        .dimension(ageDim)
+		        .barPadding(0.1)
+		        .outerPadding(0.05)
+		        .group(ageGroup)
+	        ;
+
+			alcltmChart
+				.width(540) .height(300)
+				.dimension(alcltmDim)
+				.group(alcltmGroup)
+				.elasticX(true)
+			;
+			
+			alc30d_2Chart
+				.width(540) .height(300)
+				.dimension(alc30d_2Dim)
+				.group(alc30d_2Group)
+				.elasticX(true)
+			;
+
+			alcopopsChart
+				.width(540) .height(300)
+				.dimension(alcopopsDim)
+				.group(alcopopsGroup)
+				.elasticX(true)
+			;
+
+			drunkChart
+				.width(540) .height(300)
+				.dimension(drunkDim)
+				.group(drunkGroup)
+				.elasticX(true)
+			;
+
+			drunk30dChart
+				.width(540) .height(300)
+				.dimension(drunk30dDim)
+				.group(drunk30dGroup)
+				.elasticX(true)
+			;
+
+			agealcoChart
+				.width(1100) .height(350)
+				.dimension(agealcoDim)
+				.group(agealcoGroup)
+				.elasticX(true)
+			;
+
+			agedrunkChart
+				.width(540) .height(300)
+				.dimension(agedrunkDim)
+				.group(agedrunkGroup)
+				.elasticX(true)
+			;
+
+			likeschoolChart
+				.width(540) .height(300)
+				.dimension(likeschoolDim)
+				.group(likeschoolGroup)
+				.elasticX(true)
+			;
+
+			lifesatChart
+				.width(540) .height(300)
+				.dimension(lifesatDim)
+				.group(lifesatGroup)
+				.elasticX(true)
+			;
+
+			visCount
+				.dimension(ndx)
+				.group(all)
+			;
+
+			dc.renderAll();
+
+			function colorSchema(pref, aa) {
+				a = pref.find(function(i) { return i.value === aa; });
+				return a.color;
+    		}
+		});
+	</script>
+</body>
+</html>
